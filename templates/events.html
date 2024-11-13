@@ -1,0 +1,57 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block content %}
+
+
+<main class="main">
+
+  <!-- Page Title -->
+  <div class="page-title" data-aos="fade">
+    <div class="heading">
+      <div class="container">
+        <div class="row d-flex justify-content-center text-center">
+          <div class="col-lg-8">
+            <h1>Events</h1>
+            <p class="mb-0">Welcome to our Events page! Here at Redeemer’s House Church, we believe in fostering a vibrant community through gatherings that enrich our faith and strengthen our connections with each other. From weekly worship services and Bible studies to special holiday celebrations, youth group nights, and community outreach projects, there’s something for everyone. Explore our upcoming events and find opportunities to grow spiritually, serve our community, and connect with fellow believers. We look forward to seeing you at our next gathering – everyone is welcome!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- End Page Title -->
+
+  <!-- Events Section -->
+  <section id="events" class="events section">
+
+    <div class="container" data-aos="fade-up">
+      <div class="row">
+        {% for event in events %}
+          <div class="col-md-6 d-flex align-items-stretch mb-4">
+            <div class="card">
+              <div class="card-img">
+                <img style="width: 100%; height: 40vh;" src="{{ event.image.url }}" alt="Event Image">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><a href="">{{ event.title }}</a></h5>
+                <p class="fst-italic text-center">{{ event.date }}</p>
+                <p class="card-text">{{ event.description }}</p>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    
+
+  </section><!-- /Events Section -->
+
+
+
+   
+
+</main>
+
+
+
+  {% endblock %}
+
